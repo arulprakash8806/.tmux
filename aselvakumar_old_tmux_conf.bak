@@ -1,0 +1,80 @@
+# aselvkumar original conf below, keep it until you find the above config satisfying
+# set -g @continuum-boot 'on'
+# set -g @continuum-restore 'on'
+
+# # save interval for saving tmux sessions for restore in minutes
+# set -g @continuum-save-interval '15'
+
+# # set -g status-right 'Continuum status: #{continuum_status}'
+
+# # set Zsh as your default Tmux shell
+# set-option -g default-shell ~/utils/zsh/bin/zsh
+
+# # increase scrollback buffer size
+# set -g history-limit 50000
+
+# # tmux messages are displayed for 4 seconds
+# set -g display-time 4000
+
+# # refresh 'status-left' and 'status-right' more often
+# set -g status-interval 5
+
+# # upgrade $TERM
+# # set-option -g default-terminal "tmux-256color"
+
+# set -g mouse on
+
+# # set first window to index 1 (not 0) to map more to the keyboard layout
+# set-option -g renumber-windows on
+# set -g base-index 1
+# setw -g pane-base-index 1
+
+# # Drag to re-order windows
+# bind-key -n MouseDrag1Status swap-window -t=
+
+# # Double click on the window list to open a new window
+# bind-key -n DoubleClick1Status new-window
+
+# # don't rename windows automatically
+# set-option -g allow-rename off
+
+# # move by word forward and backward using ctrl + right and ctrl + left
+# bind -n C-Left send-key M-b
+# bind -n C-Right send-key M-f
+
+# # home and end key for going to beginning and end of line
+# bind-key -n End send-key C-e
+# bind-key -n Home send-key C-a
+
+# # shortcut to reload tmux config by pressing <prefix> + r
+# bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
+
+# # split panes using | and -
+# bind | split-window -h
+# bind - split-window -v
+# unbind '"'
+# unbind %
+
+# # remap prefix from 'C-b' to 'Esc'
+# unbind C-b
+# set-option -g prefix Escape
+# bind-key Escape send-prefix
+# # set-option -g prefix C-a
+# # bind-key C-a send-prefix
+
+# # update VSCODE variables from integrated terminal so that `code` command opens in current window
+# set-option -ga update-environment 'VSCODE_GIT_ASKPASS_NODE VSCODE_GIT_ASKPASS_MAIN VSCODE_IPC_HOOK_CLI PATH GIT_ASKPASS'
+
+# # theme
+# # set -g @plugin 'odedlaz/tmux-onedark-theme'
+
+# # List of plugins
+# set -g @plugin 'tmux-plugins/tpm'
+# set -g @plugin 'tmux-plugins/tmux-yank'
+# set -g @plugin 'tmux-plugins/tmux-resurrect'
+# set -g @plugin 'tmux-plugins/tmux-continuum'
+
+
+
+# # # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+# # run '~/.tmux/plugins/tpm/tpm'
